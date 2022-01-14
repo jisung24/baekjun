@@ -12,3 +12,4 @@ for(let i=1; i<=inputNum; i++){
      emptyNum += (i + "\n");
 }
 console.log(emptyNum);
+//즉!!! 음... 그냥 

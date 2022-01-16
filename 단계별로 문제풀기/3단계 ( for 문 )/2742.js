@@ -1,10 +1,12 @@
+//이번엔 5를 입력받으면 5부터 1까지 출력하기!! 한 번에...
 'use strict';
-let input = require("fs").readFileSync("test.txt").toString();
+const fs = require("fs");
+const input = fs.readFileSync("test.txt").toString();
+//문자열 "5"를 입력..
+const testCase = Number(input);
+let emptyValue = "";
 
-const N = Number(input);
-let num = 0;
-
-for(let i=N; i>=1; i--){
-    num = num + i + "\n";
+for(let i=testCase; i>=1; i--){
+    emptyValue += (i + "\n");
 }
-console.log(num);
+console.log(emptyValue);

@@ -1,13 +1,18 @@
-//별찍는 반복문은 역시 ""에서  *를 몇 번 더하냐...의 형태이다
-let empty = " ";
-let star = "*";
-for(let i=1; i<=5; i++){
-    empty += "*";
+//각 testCase당 무엇이 반복되는 지를 파악해라!!
+//일단 testCase만큼 반복되는게 정해져있어서...
+//for문으로!!
+//1. testCase의 수와 *의 수는 같은데 나머지를 빈 칸으로 채운다.
+const fs = require("fs");
+const input = fs.readFileSync("test.txt").toString();
+const testCase = Number(input); //testCase 정수 type 5입력!
+var empty;
+for(let i=testCase; i>=i; i++){
+    for(let i=1; i<=testCase-i; i++){
+        empty = empty + "";
+    }
+    for(let i=1; i<=testCase-(testCase-i); i++){
+        empty = empty + "*";
+    }
     console.log(empty);
 }
-//for begin : 처음에 한 번만! 
-//두 번째는 몇 번 반복할건지!!!! 2번째 값 - 첫 번째 값.
-//내부 코드를 몇 번 반복할 것인가.?
-//내부 코드가 초기화면 초기화만 5번
-//출력이면 출력 5번/
-//둘 다면 초기화 앤드 출력 5번!
+//testCase - i 만큼은 ""이 testCase - (testCase - i)은 *

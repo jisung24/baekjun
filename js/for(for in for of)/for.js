@@ -110,7 +110,11 @@ for(let index in me){
 // - 배열의 값을 반복해서 출력한다!!! 
 let a = [1,2,3,4,5,6]
 for(let value of a){
+    if(value % 2 === 1){
     console.log(`값 >> ${value}`);
+    }else{
+        continue;
+    }
 }
 // for in vs for of
 // - in은 변수에 index값을 가져오고 -of는 변수에 배열의 값을 가져온다.
@@ -126,6 +130,7 @@ let pro = [1,2,3,4,5,6,7];
 for(let value of pro){
     //index몇 번 까지 출력해라.. 이건 잘 모르겠어!!
     //값을 잘 다룰 수 있겠는데 index는 아직이야.....
+    console.log(value);
 }
 
 

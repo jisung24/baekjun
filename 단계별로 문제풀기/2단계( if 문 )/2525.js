@@ -12,32 +12,31 @@ let hour = Number(time[0]); //시간
 let min = Number(time[1]); //분
 let addedTime = Number(input[1]); //더해지는 분!!
 
-if(min + addedTime > 59){
-    if(min + addedTime === 60){
-        hour++;
-        min === 0;
+
+resultTime(hour,min,addedTime);
+
+function resultTime(hour,min,addedTime){
+    //시간 분 더해지는 분을 입력을 받아서 최종 시간을 계산하는 함수!!
+    //hour : 시작시간
+    //min : 시작 분
+    //addedTime : 더해지는 시간!!!!!
+    min = min + addedTime; //min을 구함!! 여기서 이제 반복이 일어난다!!!
+
+    //시간 자체는 딱 한 번 할당받는거임!! 대신 그 할당된 조건 안에서 반복이 이뤄진다!!!!
+    //어떤게 반복이 되는 지 알아야 반복문 코드를 잘 짤 수 있음. 
+
+    if(min >= 60){ //60을 넘는다면.. 그 밑에 60이 될 때 마다!!! 조건이 반복문 위에있음!!!
+        while(min >= 60){
+            min -= 60; //60을 빼줌.
+            hour++;
+            if(hour >= 24){
+                hour -= 24; //24를 빼준다!!
+            }
+        }
         console.log(`${hour} ${min}`);
     }else{
-        hour++; //일단 hour을 증가시키고본다!!!!!!!!
-        //그리고 60이 넘어버리면 또 
-        // min = addedTime - (60 - min)이렇게 계산하는데.....
-        //60이 초과 될 경우!!!
-        if(min = addedTime - (60 - min) >= 60){
-            hour++; //hour을 또 증가!!
-            if(min = addedTime - (60 - min) === 60){
-                min === 0; //0분으로!!!
-                console.log(`${hour} ${min}`);
-            }else{
-                min = addedTime - (60 - min);
-                console.log(`${hour} ${min}`);
-            }
-            
-        }else{
-            min = addedTime - (60 - min);
-            console.log(`${hour} ${min}`);
-        }
+        console.log(`${hour} ${min}`);
     }
-}else{
-    min = min + addedTime;
-    console.log(`${hour} ${min}`);
+    
+    
 }
